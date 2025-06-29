@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8f9fa;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav a {
+            color: #0077cc;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
+        }
+        nav a:hover, nav a.active-link {
+            background: #e6f0fa;
+            color: #005999;
+        }
+        main {
+            max-width: 700px;
+            margin: 2.5rem auto 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            padding: 2.5rem 2rem 2rem 2rem;
+        }
+        section {
+            display: none;
+            animation: fadeIn 0.4s;
+        }
+        section.active {
+            display: block;
+        }
+        h1, h2 {
+            font-weight: 700;
+            margin-top: 0;
+        }
+        h1 {
+            font-size: 2.2rem;
+            color: #0077cc;
+        }
+        h2 {
+            font-size: 1.4rem;
+            color: #5b9dd3;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+            color: #5b9dd3;
+            margin-bottom: 1rem;
+        }
+        p {
+            line-height: 1.7;
+        }
+        footer {
+            text-align: center;
+            color: #888;
+            font-size: 0.95rem;
+            margin: 3rem 0 1.5rem 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(16px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 1.2rem 0.5rem;
+            }
+            nav {
+                gap: 1rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a onclick="showSection('home', this)" class="active-link">Home</a>
+        <a onclick="showSection('projects', this)">Projects</a>
+        <a onclick="showSection('blogs', this)">Blogs</a>
+        <a onclick="showSection('resources', this)">Resources</a>
+        <a onclick="showSection('contact', this)">Contact</a>
+    </nav>
+    <main>
+        <section id="home" class="active">
+            <h3>Hello and welcome to the amazing tech world of Premi Duseja</h3>    
+            <p>Here you will find a collection of my projects, blogs, and resources that I have created to help others in their tech journey.</p>
+            <p>Feel free to explore and reach out if you have any questions or suggestions!</p>
+            <p>Thank you for visiting!</p>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>List of projects will go here.</p>
+        </section>
+        <section id="blogs">
+            <h2>Blogs</h2>
+            <p>Blog posts will go here.</p>
+        </section>
+        <section id="resources">
+            <h2>Resources</h2>
+            <p>Useful resources will go here.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Contact form or details will go here.</p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Premi Duseja. All rights reserved.</p>
+    </footer>
+    <script>
+        function showSection(id, el) {
+            document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active-link'));
+            if (el) el.classList.add('active-link');
+        }
+    </script>
+</body>
+</html>
